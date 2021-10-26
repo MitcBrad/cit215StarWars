@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars: Destiny</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="destiny-app">
+    <div v-for="item in cards" class="griddisplay">
+    <div class="card" v-bind:class="card" v-bind:style="{backgroundColor:item.color}">
+        <img :src="item.img" alt="">
+        <div class="health" v-bind:class="{health}">{{item.health}}</div>
+        <div v-if="item.rarity" class="rarity rare">{{item.setNumber}}</div>
+        <div v-if="item.rarity != true" class="rarity legendary">{{item.setNumber}}</div>
+        <div class="name" v-bind:class="item.name">{{item.name}}</div>
+        <div class="affl" v-bind:class="item.affl">{{item.affl}}</div>
+    </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+<!--Bradley Mitchell 10/25/2021-->
